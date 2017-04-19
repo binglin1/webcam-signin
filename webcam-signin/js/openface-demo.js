@@ -153,9 +153,11 @@ function sendState() {
 var newLogin = "";
 
 $("#login-button").click(function(e) {
-  //if (newLogin != "") {
     $("#login-list").append(newLogin);
-  //}
+});
+
+$("#logout-button").click(function(e) {
+    $("#logout-list").append(newLogin);
 });
 
 function createSocket(address, name) {
@@ -197,8 +199,6 @@ function createSocket(address, name) {
             });
             redrawPeople();
         } else if (j.type == "IDENTITIES") {
-            //newLogin = "Last updated: " + (new Date()).toTimeString();
-            //h += "<ul>";
             var len = j.identities.length
             if (len > 0) {
                 for (var i = 0; i < len; i++) {
@@ -212,11 +212,7 @@ function createSocket(address, name) {
             } else {
                 newLogin = "<li>Nobody detected.</li>";
             }
-            //h += "</ul>"
-            //$("#peopleInVideo").html(h);
 
-
-            //updateLoginList(h);
         } else if (j.type == "ANNOTATED") {
             $("#detectedFaces").html(
                 "<img src='" + j['content'] + "' width='430px'></img>"
