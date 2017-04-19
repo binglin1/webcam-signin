@@ -27,9 +27,26 @@ limitations under the License.
         <link href="css/main.css" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <div class="header">
-                <ul class='tabs'>
+      <div class="container">
+        <h1 class="title">FSU Computer Science Department</h1>  
+        <div class="row">
+            <div class="col-md-6">
+              <h2>Majors Lab</h2>
+              <div class="col-md-6">
+                <h3>Login</h3>
+                <button id="login-button">Login</button>
+                <ul id="login-list"></ul>
+              </div>
+              <div class="col-md-6">
+                <h3>Logout</h3>
+                <button id="logout-button">Logout</button>
+                <ul id="logout-list"></ul>
+              </div>
+            </div>
+            
+            
+            <div class="col-md-6">
+              <ul class='tabs'>
                     <li class='tab-link' data-tab='tab-preview'
                         id='tab-preview-button'>
                         Preview
@@ -46,40 +63,7 @@ limitations under the License.
                 <div id='tab-annotated' class='tab-content current'>
                     <div id="detectedFaces"></div>
                 </div>
-            </div>
-            <div class="content">
 
-                <div id="added-by-trevor">
-                  
-                  <button id="login-button">Login</button>
-                  <ul id="login-list"></ul>
-                </div>
-
-                <h2>Servers: <span id="serverStatus"></span></h2>
-                <!-- <div id="serverStatus"></div> -->
-                <div class="btn-group" role="group" id="serverBtn">
-                    <button type="button" class="btn btn-default active">Local</button>
-                    <!--
-                    <button type="button" class="btn btn-default">CMU</button>
-                    <button type="button" class="btn btn-default">AWS East</button>
-                    <button type="button" class="btn btn-default">AWS West</button>
-                    -->
-                </div>
-
-                <!--
-                <h3>Null Server RTTs</h3>
-                <ul>
-                    <li>
-                        <b>CMU:</b> <span id="rtt-CMU">Not yet used.</span>
-                    </li>
-                    <li>
-                        <b>AWS East:</b> <span id="rtt-AWS-East">Not yet used.</span>
-                    </li>
-                    <li>
-                        <b>AWS West:</b> <span id="rtt-AWS-West">Not yet used.</span>
-                    </li>
-                </ul>
-                -->
 
                 <h2>Training
                     <input type="checkbox" checked data-toggle="toggle"
@@ -95,14 +79,7 @@ limitations under the License.
                     </span>
                 </div>
                 <br/>
-                <div>
-                    <button class="btn btn-default" type="button"
-                            id="viewTSNEBtn">
-                        Visualize with TSNE
-                    </button>
-                </div>
                 <br/>
-                <div class="dropdown" id="defaultPersonDropdown"></div>
                 <script id="defaultPersonTmpl" type="text/x-handlebars-template">
                     <button class="btn btn-default dropdown-toggle"
                             type="button" id="defaultPersonDropdownBtn"
@@ -131,9 +108,9 @@ limitations under the License.
 
                 <br/>
 
-                <table class="table table-striped table-hover table-condensed"
-                       id="peopleTable">
-                </table>
+                <!--<table class="table table-striped table-hover table-condensed"-->
+                       <!--id="peopleTable">-->
+                <!--</table>-->
                 <script id="peopleTableTmpl" type="text/x-handlebars-template">
                     <thead><tr>
                         <th></th>
@@ -180,8 +157,11 @@ limitations under the License.
                         {{/each}}
                     </tbody>
                 </script>
+            
+            
             </div>
         </div>
+      </div>
     </body>
     <script src="vendor/js/jquery.min.js"></script>
     <script src="vendor/js/bootstrap.min.js"></script>
