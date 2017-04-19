@@ -207,7 +207,7 @@ function createSocket(address, name) {
                     if (idIdx != -1) {
                         identity = people[idIdx];
                     }
-                    newLogin = "<li>" + identity + "</li>";
+                    newLogin = "<li>" + identity + " " + (new Date()).toLocaleString() + "</li>";
                 }
             } else {
                 newLogin = "<li>Nobody detected.</li>";
